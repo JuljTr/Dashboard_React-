@@ -1,38 +1,32 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom"
 import SidebarItem from "./SidebarItem";
-import { BiHome } from "react-icons/bi";
-import { HiOutlineClipboardList } from "react-icons/hi";
-import { GoPeople } from "react-icons/go";
-import { CgBox } from "react-icons/cg";
-import { TfiBarChart } from "react-icons/tfi";
-
+import Customers from "../../Pages/Customers.js"
 
 function Sidebar() {
     return (
         <>
-            <BrowserRouter>
-                <h1>Hello</h1>
-                <SidebarItem
+            <nav>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/customers">Customers</Link></li>
+                </ul>
+            </nav>
+            <Routes>
+                <Route path="/" element={<SidebarItem
                     name="Home"
-                    icon={<BiHome />}
-                />
-                <SidebarItem
+                />} />
+                <Route path="/orders" element={<SidebarItem
                     name="Orders"
-                    icon={<HiOutlineClipboardList />}
+                />} />
+                <Route path="/customers" element={<Customers />}
                 />
-                <SidebarItem
-                    name="Customers"
-                    icon={<GoPeople />}
-                />
-                <SidebarItem
-                    name="Products"
-                    icon={<CgBox />}
-                />
-                <SidebarItem
+                <Route path="/products" element={<SidebarItem
+                    name="Products"                    
+                />} />
+                <Route path="/analytics" element={<SidebarItem
                     name="Analytics"
-                    icon={<TfiBarChart />}
-                />
-            </BrowserRouter>
+                />} />
+            </Routes>
         </>
     )
 }

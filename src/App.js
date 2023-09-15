@@ -1,11 +1,19 @@
 import './App.css';
-import Sidebar from "./Components/Sidebar/Sidebar"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Sidebar from "./Components/Sidebar/Sidebar";
+
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-    </div>
+    <Container className="App">
+      <Row className="bg-info" xs={1}>
+        <Col md={2} >1 of 3 {/* <Sidebar /> */}</Col>
+        <Col md={8}>2 of 3</Col>
+        <Col md={2}>3 of 3</Col>
+      </Row>
+    </Container>
   );
 }
 
