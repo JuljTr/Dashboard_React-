@@ -9,7 +9,7 @@ function App() {
   return (
     <Container className="App">
       <Row className="" xs={1}>
-        <Col md={2} >1 of 3 <Sidebar /></Col>
+        <Col md={2} ><Sidebar /></Col>
         <Col md={8}>2 of 3</Col>
         <Col md={2}>3 of 3</Col>
       </Row>

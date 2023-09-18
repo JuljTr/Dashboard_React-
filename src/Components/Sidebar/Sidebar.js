@@ -1,5 +1,14 @@
 import { Routes, Route, Link } from "react-router-dom";
-import SidebarItem from "./SidebarItem";
+import ContactsInformation from "../../Pages/Data/ContactsInformation";
+import Invoices from "../../Pages/Data/Invoices";
+import ManageTeam from "../../Pages/Data/ManageTeam";
+import Customers from "../../Pages/Data/Customers";
+import Calendar from "../../Pages/PagesFile/Calendar";
+import FAQPage from "../../Pages/PagesFile/FAQPage";
+import Analytics from "../../Pages/Charts/Analytics";
+import BarChart from "../../Pages/Charts/BarChart";
+import LineChart from "../../Pages/Charts/LineChart";
+import PieChart from "../../Pages/Charts/PieChart";
 
 
 function Sidebar() {
@@ -7,22 +16,48 @@ function Sidebar() {
         <>
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/contactsInformation">Contacts Information</Link></li>
+                    <li><Link to="/invoices">Invoices</Link></li>
+                    <li><Link to="/analytics">Analytics</Link></li>
+                    <li><Link to="/manageteam">ManageTeam</Link></li>
                     <li><Link to="/customers">Customers</Link></li>
+                    <li><Link to="/calendar">Calendar</Link></li>
+                    <li><Link to="/faqpage">FAQPage</Link></li>
+                    <li><Link to="/barchart">BarChart</Link></li>
+                    <li><Link to="/linechart">LineChart</Link></li>
+                    <li><Link to="/piechart">PieChart</Link></li>
                 </ul>
             </nav>
             <Routes>
-                <Route path="/" element={<SidebarItem
-                    name="Home"                                                                                                        
+                <Route path="/contactsInformation" element={<ContactsInformation
+                    name="ContactsInformation"
                 />} />
-                <Route path="/orders" element={<SidebarItem
-                    name="Orders"
+                <Route path="/invoices" element={<Invoices
+                    name="Invoices"
                 />} />
-                <Route path="/products" element={<SidebarItem
-                    name="Products"
-                />} />
-                <Route path="/analytics" element={<SidebarItem
+                <Route path="/analytics" element={<Analytics
                     name="Analytics"
+                />} />
+                <Route path="/manageteam" element={<ManageTeam
+                    name="ManageTeam"
+                />} />
+                <Route path="/customers" element={<Customers
+                    name="Customers"
+                />} />
+                <Route path="/calendar" element={<Calendar
+                    name="Calendar"
+                />} />
+                <Route path="/faqpage" element={<FAQPage
+                    name="FAQPage"
+                />} />
+                <Route path="/barchart" element={<BarChart
+                    name="BarChart"
+                />} />
+                <Route path="/linechart" element={<LineChart
+                    name="LineChart"
+                />} />
+                <Route path="/piechart" element={<PieChart
+                    name="PieChart"
                 />} />
             </Routes>
         </>
