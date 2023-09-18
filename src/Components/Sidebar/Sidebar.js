@@ -1,6 +1,6 @@
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
-import Customers from "../../Pages/Customers.js"
+
 
 function Sidebar() {
     return (
@@ -13,15 +13,13 @@ function Sidebar() {
             </nav>
             <Routes>
                 <Route path="/" element={<SidebarItem
-                    name="Home"
+                    name="Home"                                                                                                        
                 />} />
                 <Route path="/orders" element={<SidebarItem
                     name="Orders"
                 />} />
-                <Route path="/customers" element={<Customers />}
-                />
                 <Route path="/products" element={<SidebarItem
-                    name="Products"                    
+                    name="Products"
                 />} />
                 <Route path="/analytics" element={<SidebarItem
                     name="Analytics"

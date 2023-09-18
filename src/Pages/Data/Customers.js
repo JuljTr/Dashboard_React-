@@ -1,7 +1,7 @@
 function Customers(){
     return(
         <>
-        <h1>Hello</h1>
+        <h1>Customers</h1>
         </>
     )
 }
