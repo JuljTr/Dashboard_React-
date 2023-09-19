@@ -1,65 +1,51 @@
-import { Routes, Route, Link } from "react-router-dom";
-import ContactsInformation from "../../Pages/Data/ContactsInformation";
-import Invoices from "../../Pages/Data/Invoices";
-import ManageTeam from "../../Pages/Data/ManageTeam";
-import Customers from "../../Pages/Data/Customers";
-import Calendar from "../../Pages/PagesFile/Calendar";
-import FAQPage from "../../Pages/PagesFile/FAQPage";
-import Analytics from "../../Pages/Charts/Analytics";
-import BarChart from "../../Pages/Charts/BarChart";
-import LineChart from "../../Pages/Charts/LineChart";
-import PieChart from "../../Pages/Charts/PieChart";
-
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { Link } from "react-router-dom";
+import Image from 'react-bootstrap/Image';
+import SidebarItem from "./SidebarItem";
+import './Sidebar.scss';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { BiHome } from "react-icons/bi";
+import { GoPeople } from "react-icons/go";
+import { BiSolidContact} from "react-icons/bi";
+import { FaFileInvoiceDollar } from "react-icons/fa";
+import { BsReverseListColumnsReverse } from "react-icons/bs";
+import { AiFillCalendar } from "react-icons/ai";
+import { FaQuestionCircle } from "react-icons/fa";
+import { TbDeviceAnalytics } from "react-icons/tb";
+import { BsFillBarChartFill } from "react-icons/bs";
+import { BiSolidPieChartAlt2 } from "react-icons/bi";
+import { AiOutlineRise } from "react-icons/ai";
+import icon from "../../img/icons-avatar.png"
 
 function Sidebar() {
     return (
         <>
-            <nav>
-                <ul>
-                    <li><Link to="/contactsInformation">Contacts Information</Link></li>
-                    <li><Link to="/invoices">Invoices</Link></li>
-                    <li><Link to="/analytics">Analytics</Link></li>
-                    <li><Link to="/manageteam">ManageTeam</Link></li>
-                    <li><Link to="/customers">Customers</Link></li>
-                    <li><Link to="/calendar">Calendar</Link></li>
-                    <li><Link to="/faqpage">FAQPage</Link></li>
-                    <li><Link to="/barchart">BarChart</Link></li>
-                    <li><Link to="/linechart">LineChart</Link></li>
-                    <li><Link to="/piechart">PieChart</Link></li>
-                </ul>
-            </nav>
-            <Routes>
-                <Route path="/contactsInformation" element={<ContactsInformation
-                    name="ContactsInformation"
-                />} />
-                <Route path="/invoices" element={<Invoices
-                    name="Invoices"
-                />} />
-                <Route path="/analytics" element={<Analytics
-                    name="Analytics"
-                />} />
-                <Route path="/manageteam" element={<ManageTeam
-                    name="ManageTeam"
-                />} />
-                <Route path="/customers" element={<Customers
-                    name="Customers"
-                />} />
-                <Route path="/calendar" element={<Calendar
-                    name="Calendar"
-                />} />
-                <Route path="/faqpage" element={<FAQPage
-                    name="FAQPage"
-                />} />
-                <Route path="/barchart" element={<BarChart
-                    name="BarChart"
-                />} />
-                <Route path="/linechart" element={<LineChart
-                    name="LineChart"
-                />} />
-                <Route path="/piechart" element={<PieChart
-                    name="PieChart"
-                />} />
-            </Routes>
+            <Container className="bg-primary sidebar">
+                <Navbar.Brand href="#home">ADMIN </Navbar.Brand>
+                <span><GiHamburgerMenu /></span>
+                <Image src={icon} roundedCircle fluid className='mx-auto d-block w-50' />
+                <Nav defaultActiveKey="/home" className="flex-column">
+                    <Nav.Link href="/home"> <SidebarItem name="Dashboard" icon={<BiHome />} /></Nav.Link>
+                    <div>Data</div>
+                    <Nav.Link as={Link} to="/manageteam"><SidebarItem name="Manage Team" icon={<GoPeople />} /></Nav.Link>
+                    <Nav.Link as={Link} to="/contactsInformation"> <SidebarItem name="Contacts Information" icon={<BiSolidContact />} /></Nav.Link>
+                    <Nav.Link as={Link} to="/customers"> <SidebarItem name="Customers" icon={<BsReverseListColumnsReverse />}  /></Nav.Link>
+                    <Nav.Link as={Link} to="/invoices"><SidebarItem name="Invoices" icon={<FaFileInvoiceDollar />} /></Nav.Link>
+                    <div>Pages</div>
+                    <Nav.Link as={Link} to="/calendar"><SidebarItem name="Calendar" icon={<AiFillCalendar />} /></Nav.Link>
+                    <Nav.Link as={Link} to="/faqpage"> <SidebarItem name="FAQ Page" icon={<FaQuestionCircle />} /></Nav.Link>
+                    <div>Charts</div>
+                    <Nav.Link as={Link} to="/analytics"><SidebarItem name="Analytics" icon={<TbDeviceAnalytics />} /></Nav.Link>
+                    <Nav.Link as={Link} to="/barchart"> <SidebarItem name="Bar Chart" icon={<BsFillBarChartFill />} /></Nav.Link>
+                    <Nav.Link as={Link} to="/linechart"><SidebarItem name="Line Chart" icon={<AiOutlineRise />} /></Nav.Link>
+                    <Nav.Link as={Link} to="/piechart"><SidebarItem name="Pie Chart" icon={<BiSolidPieChartAlt2 />} /></Nav.Link>
+                    <Nav.Link eventKey="disabled" disabled>
+                        Disabled
+                    </Nav.Link>
+                </Nav>
+            </Container>
         </>
     )
 }
