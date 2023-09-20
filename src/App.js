@@ -14,6 +14,7 @@ import Analytics from "./Pages/Charts/Analytics";
 import BarChart from "./Pages/Charts/BarChart";
 import LineChart from "./Pages/Charts/LineChart";
 import PieChart from "./Pages/Charts/PieChart";
+import TopBar from './Components/TopBar/TopBar';
 
 
 function App() {
@@ -53,7 +54,9 @@ function App() {
             <Route path="/piechart" element={<PieChart
               name="PieChart"
             />} />
-          </Routes></Col>
+          </Routes>
+          <TopBar/>
+          </Col>
       </Row>
     </Container>
   );

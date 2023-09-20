@@ -24,10 +24,12 @@ function Sidebar() {
         <>
             <Container className="bg-primary sidebar">
                 <Navbar.Brand href="#home" className='h3'>ADMIN <span><GiHamburgerMenu /></span></Navbar.Brand>
+                {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
                 <hr></hr>
+                {/* <Navbar.Collapse id="navbarScroll"> */}
                 <Image src={icon} roundedCircle fluid className='icon mx-auto d-block' />
                 <Nav activeKey="/home" className="flex-column">
-                    <Nav.Link href="/home"> <SidebarItem name="Dashboard" icon={<BiHome />} /></Nav.Link>
+                    <Nav.Link  as={Link} to="/home"> <SidebarItem name="Dashboard" icon={<BiHome />} /></Nav.Link>
                     <div id='listing-title'>Data</div>
                     <Nav.Link as={Link} to="/manageteam"><SidebarItem name="Manage Team" icon={<GoPeople />} /></Nav.Link>
                     <Nav.Link as={Link} to="/contactsInformation"> <SidebarItem name="Contacts Information" icon={<BiSolidContact />} /></Nav.Link>
@@ -45,6 +47,7 @@ function Sidebar() {
                         Disabled
                     </Nav.Link>
                 </Nav>
+                {/* </Navbar.Collapse> */}
             </Container>
         </>
     )
