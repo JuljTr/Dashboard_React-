@@ -1,10 +1,9 @@
 function SidebarItem(props) {
     return (
         <>
-            <div>
-                {props.icon}
-                {props.name}
-            </div>
+
+            <span className="pe-2">{props.icon}</span>
+            <span className="fs-6 fw-medium">{props.name}</span>
         </>
     )
 }

@@ -17,26 +17,26 @@ import { TbDeviceAnalytics } from "react-icons/tb";
 import { BsFillBarChartFill } from "react-icons/bs";
 import { BiSolidPieChartAlt2 } from "react-icons/bi";
 import { AiOutlineRise } from "react-icons/ai";
-import icon from "../../img/icons-avatar.png"
+import icon from "../../img/icons-avatar.png";
 
 function Sidebar() {
     return (
         <>
             <Container className="bg-primary sidebar">
-                <Navbar.Brand href="#home">ADMIN </Navbar.Brand>
-                <span><GiHamburgerMenu /></span>
-                <Image src={icon} roundedCircle fluid className='mx-auto d-block w-50' />
-                <Nav defaultActiveKey="/home" className="flex-column">
+                <Navbar.Brand href="#home" className='h3'>ADMIN <span><GiHamburgerMenu /></span></Navbar.Brand>
+                <hr></hr>
+                <Image src={icon} roundedCircle fluid className='icon mx-auto d-block' />
+                <Nav activeKey="/home" className="flex-column">
                     <Nav.Link href="/home"> <SidebarItem name="Dashboard" icon={<BiHome />} /></Nav.Link>
-                    <div>Data</div>
+                    <div id='listing-title'>Data</div>
                     <Nav.Link as={Link} to="/manageteam"><SidebarItem name="Manage Team" icon={<GoPeople />} /></Nav.Link>
                     <Nav.Link as={Link} to="/contactsInformation"> <SidebarItem name="Contacts Information" icon={<BiSolidContact />} /></Nav.Link>
                     <Nav.Link as={Link} to="/customers"> <SidebarItem name="Customers" icon={<BsReverseListColumnsReverse />}  /></Nav.Link>
                     <Nav.Link as={Link} to="/invoices"><SidebarItem name="Invoices" icon={<FaFileInvoiceDollar />} /></Nav.Link>
-                    <div>Pages</div>
+                    <div id='listing-title'>Pages</div>
                     <Nav.Link as={Link} to="/calendar"><SidebarItem name="Calendar" icon={<AiFillCalendar />} /></Nav.Link>
                     <Nav.Link as={Link} to="/faqpage"> <SidebarItem name="FAQ Page" icon={<FaQuestionCircle />} /></Nav.Link>
-                    <div>Charts</div>
+                    <div id='listing-title'>Charts</div>
                     <Nav.Link as={Link} to="/analytics"><SidebarItem name="Analytics" icon={<TbDeviceAnalytics />} /></Nav.Link>
                     <Nav.Link as={Link} to="/barchart"> <SidebarItem name="Bar Chart" icon={<BsFillBarChartFill />} /></Nav.Link>
                     <Nav.Link as={Link} to="/linechart"><SidebarItem name="Line Chart" icon={<AiOutlineRise />} /></Nav.Link>

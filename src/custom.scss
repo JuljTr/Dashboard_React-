@@ -7,4 +7,10 @@ $body-bg: #000000;
 $primary: #1c2438;
 $nav-link-color: #c7cbd7;
 
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Inter', sans-serif;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+
+
 @import "~bootstrap/scss/bootstrap.scss";

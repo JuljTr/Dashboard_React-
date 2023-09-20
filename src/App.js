@@ -20,8 +20,8 @@ function App() {
   return (
     <Container fluid>
       <Row xs={1}>
-        <Col md={3} className='p-0 h-100'><Sidebar /></Col>
-        <Col md={8}>
+        <Col md={3} lg={2}className='vh-100 p-0'><Sidebar /></Col>
+        <Col md={9} lg={10}>
           <Routes>
             <Route path="/contactsInformation" element={<ContactsInformation
               name="ContactsInformation"
