@@ -4,17 +4,17 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Sidebar from "./Components/Sidebar/Sidebar";
-import ContactsInformation from "./Pages/Data/ContactsInformation";
-import Invoices from "./Pages/Data/Invoices";
-import ManageTeam from "./Pages/Data/ManageTeam";
-import Customers from "./Pages/Data/Customers";
+import ContactsInformation from "./Pages/DataPages/ContactsInformation";
+import Invoices from "./Pages/DataPages/Invoices";
+import ManageTeam from "./Pages/DataPages/ManageTeam";
+import Customers from "./Pages/DataPages/Customers";
 import Calendar from "./Pages/PagesFile/Calendar";
 import FAQPage from "./Pages/PagesFile/FAQPage";
 import Analytics from "./Pages/Charts/Analytics";
 import BarChart from "./Pages/Charts/BarChart";
 import LineChart from "./Pages/Charts/LineChart";
 import PieChart from "./Pages/Charts/PieChart";
-import TopBar from './Components/TopBar/TopBar';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
         <Col md={3} lg={2}className='vh-100 p-0'><Sidebar /></Col>
         <Col md={9} lg={10}>
           <Routes>
+            <Route path="/home" element={<Dashboard
+              name="Dashboard"
+            />} />
             <Route path="/contactsInformation" element={<ContactsInformation
               name="ContactsInformation"
             />} />
@@ -55,7 +58,6 @@ function App() {
               name="PieChart"
             />} />
           </Routes>
-          <TopBar/>
           </Col>
       </Row>
     </Container>
