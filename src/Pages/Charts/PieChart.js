@@ -1,8 +1,14 @@
-import React from 'react'
+import TopBar from "../../Components/TopBar/TopBar";
+import { mockDataPie } from "../../Data/ChartData";
+import PieChartComp from "../../Components/ChartComponents/PieChartComp";
+import './Style.scss';
 
 function PieChart() {
     return (
-        <div>PieChart</div>
+        <>
+            <TopBar />
+            <div className=" h-50 barchart bg-primary"><PieChartComp data={mockDataPie} /></div>
+        </>
     )
 }
 

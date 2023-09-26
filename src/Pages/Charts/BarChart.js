@@ -1,10 +1,15 @@
-import BarChartComp from "../../Components/ChartComponents/BarChart";
-import { mockDataBar} from "../../Data/Data";
+import BarChartComp from "../../Components/ChartComponents/BarChartComp";
+import { mockDataBar } from "../../Data/ChartData";
+import TopBar from "../../Components/TopBar/TopBar";
+import './Style.scss';
 
 function BarChart() {
     return (
-        <div className="h-50 mw-lg-75"><BarChartComp data={mockDataBar}/></div>
+        <>
+            <TopBar />
+            <div className=" h-50 barchart bg-primary"><BarChartComp data={mockDataBar} /></div>
+        </>
     )
 }
 
-export default BarChart
+export default BarChart;
