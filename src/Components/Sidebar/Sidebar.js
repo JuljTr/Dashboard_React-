@@ -1,12 +1,14 @@
+import './Sidebar.scss';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { Link } from "react-router-dom";
 import Image from 'react-bootstrap/Image';
 import SidebarItem from "./SidebarItem";
-import './Sidebar.scss';
+import icon from "../../img/icons-avatar.png";
+import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiHome } from "react-icons/bi";
+import { BsPersonFillAdd } from "react-icons/bs";
 import { GoPeople } from "react-icons/go";
 import { BiSolidContact} from "react-icons/bi";
 import { FaFileInvoiceDollar } from "react-icons/fa";
@@ -17,7 +19,6 @@ import { TbDeviceAnalytics } from "react-icons/tb";
 import { BsFillBarChartFill } from "react-icons/bs";
 import { BiSolidPieChartAlt2 } from "react-icons/bi";
 import { AiOutlineRise } from "react-icons/ai";
-import icon from "../../img/icons-avatar.png";
 
 function Sidebar() {
     return (
@@ -36,6 +37,7 @@ function Sidebar() {
                     <Nav.Link as={Link} to="/customers"> <SidebarItem name="Customers" icon={<BsReverseListColumnsReverse />}  /></Nav.Link>
                     <Nav.Link as={Link} to="/invoices"><SidebarItem name="Invoices" icon={<FaFileInvoiceDollar />} /></Nav.Link>
                     <div id='listing-title'>Pages</div>
+                    <Nav.Link as={Link} to="/profileForm"><SidebarItem name="Profile Form" icon={<BsPersonFillAdd />} /></Nav.Link>
                     <Nav.Link as={Link} to="/calendar"><SidebarItem name="Calendar" icon={<AiFillCalendar />} /></Nav.Link>
                     <Nav.Link as={Link} to="/faqpage"> <SidebarItem name="FAQ Page" icon={<FaQuestionCircle />} /></Nav.Link>
                     <div id='listing-title'>Charts</div>

@@ -9,6 +9,7 @@ import Invoices from "./Pages/DataPages/Invoices";
 import ManageTeam from "./Pages/DataPages/ManageTeam";
 import Customers from "./Pages/DataPages/Customers";
 import Calendar from "./Pages/PagesFile/Calendar";
+import ProfileForm from "./Pages/PagesFile/ProfileForm";
 import FAQPage from "./Pages/PagesFile/FAQPage";
 import Analytics from "./Pages/Charts/Analytics";
 import BarChart from "./Pages/Charts/BarChart";
@@ -41,6 +42,9 @@ function App() {
             />} />
             <Route path="/customers" element={<Customers
               name="Customers"
+            />} />
+            <Route path="/profileForm" element={<ProfileForm
+              name="ProfileForm"
             />} />
             <Route path="/calendar" element={<Calendar
               name="Calendar"
